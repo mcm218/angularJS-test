@@ -1,6 +1,8 @@
 <p>Hello World </p>
-<input type="text" ng-model="$ctrl.query"></input>
-<button ng-click="$ctrl.search ()">Search</button>
+<form ng-submit="$ctrl.search ()">
+    <input type="text" ng-model="$ctrl.query" ></input>
+    <button>Search</button>
+</form>
 <ul style="display: grid; grid-template-columns: repeat(auto-fill, 300px); gap: 10px; list-style-type: none;">
     <li ng-repeat="movie in $ctrl.movies | orderBy:'-Year'">
         <img scale-on-hover ng-src="{{movie.Poster}}" alt="{{movie.Title + " Poster"}}"></img>
